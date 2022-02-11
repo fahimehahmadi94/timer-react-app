@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./style.css";
+import App from './App';
+
 //part 7
 // const tick = () => {
 //   const elem = (
@@ -49,38 +51,41 @@ import "./style.css";
 //   tick();
 // }, 1000);
 //part9
-class App extends React.Component {
-  render() {
-    return (
-      <div className="main">
-        <Hello />
-        <Timer />
-      </div>
-    );
-  }
-}
-class Hello extends React.Component {
-  render() {
-    return <h1> Hi everyone</h1>;
-  }
-}
-class Timer extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      time: new Date().toLocaleTimeString(),
-    };
-  }
+// class App extends React.Component {
+//   render() {
+//     return (
+//       <div className="main">
+//         <Hello />
+//         <Timer />
+//       </div>
+//     );
+//   }
+// }
+// class Hello extends React.Component {
+//   render() {
+//     return <h1> Hi everyone</h1>;
+//   }
+// }
+// class Timer extends React.Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       time: new Date().toLocaleTimeString(),
+//     };
+//   }
 
-  render() {
-    setInterval(() => {
-      this.setState({
-        time: new Date().toLocaleTimeString(),
-      });
-    }, 1000);
+//   render() {
+//     setInterval(() => {
+//       this.setState({
+//         time: new Date().toLocaleTimeString(),
+//       });
+//     }, 1000);
 
-    return <h2 className="timer">It is {this.state.time}</h2>;
-  }
-}
+//     return <h2 className="timer">It is {this.state.time}</h2>;
+//   }
+// }
+//part10
+
+
 
 ReactDOM.render(<App />, document.getElementById("root"));
