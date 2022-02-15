@@ -10,18 +10,17 @@ class App extends React.Component {
     this.state = {
       title: "HI",
     };
-   
-  } 
+  }
   handlelSetTitle = () => {
-      this.setState({
-        title: "خوش آمدید"
-      })
-    };
+    this.setState({
+      title: "خوش آمدید",
+    });
+  };
   render() {
     return (
       <div className="main">
         <Hello title={this.state.title} />
-        <Timer handlelSetTitle={this.handlelSetTitle}/>
+        <Timer handlelSetTitle={this.handlelSetTitle} />
       </div>
     );
   }
