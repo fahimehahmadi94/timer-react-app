@@ -137,7 +137,6 @@ class Timer extends React.Component {
             {this.props.isLight ? "dark" : "light"}
           </button>
         </div>
-        <TimeList>{this.context.timeArr}</TimeList>
       </div>
     );
   }

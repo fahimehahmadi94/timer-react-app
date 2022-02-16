@@ -54,6 +54,7 @@ const App = () => {
           isLight={isLight}
           handlelSetIsLight={handlelSetIsLight}
         />
+        <TimeList />
       </div>
     </TestContext.Provider>
   );
