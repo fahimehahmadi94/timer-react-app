@@ -4,6 +4,7 @@ import "./style.css";
 import Timer from "./Timer";
 import Hello from "./Hello";
 import TimeList from "./TimeList";
+import { TestContext } from "./TestContext";
 
 // class App extends React.Component {
 //   constructor() {
@@ -41,16 +42,20 @@ const App = () => {
   };
 
   return (
-    <div className="main" style={{ background: isLight ? "white" : "black" }}>
-      <Hello title={title} />
-      <Timer
-        timeArr={timeArr}
-        setTimeArr={setTimeArr}
-        isLight={isLight}
-        handlelSetIsLight={handlelSetIsLight}
-      />
-     
-    </div>
+    <TestContext.Provider
+      value={{
+        timeArr: timeArr,
+        setTimeArr:setTimeArr
+      }}
+    >
+      <div className="main" style={{ background: isLight ? "white" : "black" }}>
+        <Hello title={title} />
+        <Timer
+          isLight={isLight}
+          handlelSetIsLight={handlelSetIsLight}
+        />
+      </div>
+    </TestContext.Provider>
   );
 };
 export default App;
