@@ -29,7 +29,7 @@ import TimeList from "./TimeList";
 const App = () => {
   const [title, setTitle] = useState("salam dostam");
   const [isLight, setIsLight] = useState(false);
-  const [timeArr, setTimeArr] = useState(["00:05:12"]);
+  const [timeArr, setTimeArr] = useState(["00 : 05 : 12"]);
 
   useEffect(() => {
     console.log("useEfect");
@@ -43,8 +43,13 @@ const App = () => {
   return (
     <div className="main" style={{ background: isLight ? "white" : "black" }}>
       <Hello title={title} />
-      <Timer isLight={isLight} handlelSetIsLight={handlelSetIsLight} />
-      <TimeList>{timeArr}</TimeList>
+      <Timer
+        timeArr={timeArr}
+        setTimeArr={setTimeArr}
+        isLight={isLight}
+        handlelSetIsLight={handlelSetIsLight}
+      />
+     
     </div>
   );
 };

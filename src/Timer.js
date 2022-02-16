@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Component } from "react/cjs/react.production.min";
 import "./style.css";
+import TimeList from "./TimeList";
 
 // let interval;
 
@@ -86,6 +87,16 @@ class Timer extends React.Component {
     });
   };
 
+  handelSaveTime = () => {
+    let h = this.state.hour;
+    let m = this.state.minute;
+    let s = this.state.second;
+    let newTime = `${h > 9 ? h : "0" + h} : ${m > 9 ? m : "0" + m}: ${
+      s > 9 ? s : "0" + s
+    }`;
+    this.props.setTimeArr([...this.props.timeArr, newTime]);
+  };
+
   componentDidMount() {}
 
   componentDidUpdate() {}
@@ -96,8 +107,8 @@ class Timer extends React.Component {
     let m = this.state.minute;
     let s = this.state.second;
     return (
-      <div>
-        <h2 className="timer">
+      <div >
+        <h2 className="timer" onClick={this.handelSaveTime}>
           {`${h > 9 ? h : "0" + h} : ${m > 9 ? m : "0" + m}: ${
             s > 9 ? s : "0" + s
           }`}
@@ -125,6 +136,7 @@ class Timer extends React.Component {
             {this.props.isLight ? "dark" : "light"}
           </button>
         </div>
+        <TimeList >{this.props.timeArr}</TimeList>
       </div>
     );
   }
